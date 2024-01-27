@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Dark and Light</title>
+    <script src="https://kit.fontawesome.com/cea21fc6ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!------------------------------------Navbar------------------------------------>
+    <div class="nav">
+
+        <div class="button">
+            <ul type="none" class="ul">
+                <a id="Home" href="#Home">Home </a>
+                <a id="adm" href="#contact">Contact</a>
+                <img class="theme" src="image/icon-sun.svg" alt="">
+            </ul>
+
+
+
+        </div>
+
+
+    </div>
+    <!----------------------------------------Navbar End---------------------->
+    <div class="main">
+        <h1 class="h1">Jay Shree Krishna</h1>
+
+    </div>
+    <!------------------------------SlideShow start--------->
+    <div class="slideshow-container">
+        <div class="mySlides-fade">
+            <img src="1.jpeg" />
+        </div>
+
+        <div class="mySlides-fade">
+            <img src="2.jpeg" />
+        </div>
+
+        <div class="mySlides-fade">
+            <img src="3.jpeg" />
+        </div>
+
+        <div class="mySlides-fade">
+            <img src="4.jpeg" />
+        </div>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+
+    <!----------------------------------------------Main secition end  --------------->
+
+
+
+    <!----------------------------------------------Contact  ------------------------------->
+    <h1 id="contact">Contact</h1>
+    <div class="contact">
+        <div class="boxs">
+            <div class="box1">
+                <h1>Contact me</h1>
+                <p><i class="fa-solid fa-envelope"></i>abc123@gmail.com</p>
+                <p> <i class="fa-solid fa-phone"></i>+91 9876543210</p>
+                <p> <i class="fa fa-linkedin"></i>Linkedin Id</p>
+                <p> <i class="fa-brands fa-instagram"></i>Instagram Id</p>
+                <p><i class="fa-brands fa-facebook"></i>Facebook Id</p>
+
+            </div>
+            <div class="box2">
+                <form>
+                    Name
+                    <input type="text" name="name" placeholder="your name" required>
+                    Mobile No.
+                    <input type="text" name="num" placeholder="your number" required>
+                    Message
+                    <input type="text" name="message" placeholder="your message" required>
+                    <button type="submit">submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <p class="copy-kausha">Copyright JSK@2024.All rights reserved. </p>
+
+    </div>
+</body>
+
+<script>
+    const themeIcon = document.querySelector(".theme");
+    themeIcon.addEventListener("click", () => {
+        document.body.classList.toggle("dark"), document.body.classList.contains("dark") ? (themeIcon.src = "image/icon-moon.svg") : (themeIcon.src = "image/icon-sun.svg");
+    });
+
+    // <!------------script start for img courousel ------------->
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-fade");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+
+    // <!------------script end for img courousel ------------->
+
+
+
+</script>
+
+</html>
+</body>
+
+</html>
